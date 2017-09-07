@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html dir="ltr" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>中国城市空气质量指数（AQI） 提示</title>
+<style>
+body{line-height:1.5;background:#f1f1f1;font-size:14px;font-family:"Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei",SimSun,sans-serif;-webkit-text-size-adjust:none}
+#content{margin:0 auto;width:540px;margin-top:20px;padding:10px 30px;text-align:center;background:#fff;border-radius:10px;border:1px solid #ddd;text-align:left}
+a{text-decoration:none;color:#d4574e}
+a:hover{cursor:pointer}
+pre{font-size:14px;font-family:"Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei",SimSun,sans-serif;-webkit-text-size-adjust:none}
+#limit{width:60px; height:1.5em}
+</style>
+</head>
+<body>
+    <div id="content">
+        <h2 style="text-align:center">中国城市空气质量指数（AQI）</h1>
+        <p style="text-align:center"><a href="http://xia.im/">我的博客</a> / <a href="http://pm25.in/">数据源 pm25.in</a> / <a href="http://xia.im/upload/aqi-calculator.html">AQI 计算器</a></p>
+        <h3>提示</h3>
+        <ul>
+            <li>插件约每 60 分钟检查一次更新（在新数据发布后 0 ~ 15 分钟后开始更新）</li>
+            <li>启动浏览器时，插件会根据上次更新时间决定是否需要立即更新数据。</li>
+            <li>插件未能获取数据时，会在 10 分钟后重试，您也可以手动更新。</li>
+            <li>点击插件面板下方的链接，自动跳转到您设置城市的 <a href="http://pm25.in/">pm25.in</a> 页面。</li>
+            <li>注意！切勿频繁手动更新数据，连续获取数据失败请到网站查看数据。</li>
+            <li><strong style="color:red">诸多限制，是因为服务器资源非常有限，所以请不要大量消耗服务器资源。</strong></li>
+            <li><strong style="color:red">数据仅供参考，作者不对数据的错误、延误造成的损失、损害承担任何责任！</strong></li>
+        </ul>
+        <h3>AQI 计算方法</h3>
+        <ul>
+            <li>中国标准：<a href="http://kjs.mep.gov.cn/hjbhbz/bzwb/dqhjbh/jcgfffbz/201203/t20120302_224166.htm">HJ 633-2012</a>；美国标准： <a href="https://nepis.epa.gov/Exe/ZyNET.exe/P100BZGG.txt?ZyActionD=ZyDocument&Client=EPA&Index=2006%20Thru%202010&Docs=&Query=&Time=&EndTime=&SearchMethod=1&TocRestrict=n&Toc=&TocEntry=&QField=&QFieldYear=&QFieldMonth=&QFieldDay=&UseQField=&IntQFieldOp=0&ExtQFieldOp=0&XmlQuery=&File=D%3A%5CZYFILES%5CINDEX%20DATA%5C06THRU10%5CTXT%5C00000030%5CP100BZGG.txt&User=ANONYMOUS&Password=anonymous&SortMethod=h%7C-&MaximumDocuments=1&FuzzyDegree=0&ImageQuality=r75g8/r75g8/x150y150g16/i425&Display=hpfr&DefSeekPage=x&SearchBack=ZyActionL&Back=ZyActionS&BackDesc=Results%20page&MaximumPages=1&ZyEntry=1">EPA-454/B-09-001</a>和 2013 年修正文件。</li>
+            <li>数据源提供的 API 值为 24 小时平均，插件显示的 AQI 中国标准 1 小时和 AQI 美国标准 1 小时参考值是在数据二次计算基础上获得。</li>
+            <li>插件计算 AQI 时会统计所有污染物的 AQI，数据与仅计算 PM2.5 和 PM10 的 AQI 可能会有较大差别。</li>
+        </ul>
+        <hr></hr>
+        <label for="limit">图标显示AQI数值（0一直显示，501永不显示，100轻度污染以上显示）:<input name="limit" type="number" min="0" max= "501" id="limit" value="100"></input></label>
+    </div>
+    <script src="options.js"></script>
+</body>
+</html>

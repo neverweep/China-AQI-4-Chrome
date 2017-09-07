@@ -1,0 +1,463 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="res/style.css" />
+</head>
+<body>
+<div id="container">
+<div id="main">
+    <div title="AQI 中国标准 1 小时平均值" id="cn_aqi">--</div>
+    <div id="quality"></div>
+    <select id="city">
+        <option selected disabled>请选择城市...</option>
+             <option value="abazhou">a - 阿坝州</option>
+             <option value="akesudiqu">a - 阿克苏地区</option>
+             <option value="alashanmeng">a - 阿拉善盟</option>
+             <option value="aletaidiqu">a - 阿勒泰地区</option>
+             <option value="alidiqu">a - 阿里地区</option>
+             <option value="ankang">a - 安康</option>
+             <option value="anqing">a - 安庆</option>
+             <option value="anshun">a - 安顺</option>
+             <option value="anyang">a - 安阳</option>
+             <option value="anshan">a - 鞍山</option>
+             <option value="bayannaoer">b - 巴彦淖尔</option>
+             <option value="bazhong">b - 巴中</option>
+             <option value="baicheng">b - 白城</option>
+             <option value="baishan">b - 白山</option>
+             <option value="baiyin">b - 白银</option>
+             <option value="baise">b - 百色</option>
+             <option value="bangbu">b - 蚌埠</option>
+             <option value="baotou">b - 包头</option>
+             <option value="baoji">b - 宝鸡</option>
+             <option value="baoding">b - 保定</option>
+             <option value="baoshan">b - 保山</option>
+             <option value="beihai">b - 北海</option>
+             <option value="beijing">b - 北京</option>
+             <option value="benxi">b - 本溪</option>
+             <option value="bijie">b - 毕节</option>
+             <option value="binzhou">b - 滨州</option>
+             <option value="bozhou">b - 亳州</option>
+             <option value="boertala">b - 博州</option>
+             <option value="cangzhou">c - 沧州</option>
+             <option value="changdoudiqu">c - 昌都地区</option>
+             <option value="changjizhou">c - 昌吉州</option>
+             <option value="changde">c - 常德</option>
+             <option value="changshu">c - 常熟</option>
+             <option value="changzhou">c - 常州</option>
+             <option value="chaoyang">c - 朝阳</option>
+             <option value="chaozhou">c - 潮州</option>
+             <option value="chenzhou">c - 郴州</option>
+             <option value="chengdou">c - 成都</option>
+             <option value="chengde">c - 承德</option>
+             <option value="chizhou">c - 池州</option>
+             <option value="chifeng">c - 赤峰</option>
+             <option value="chongzuo">c - 崇左</option>
+             <option value="chuzhou">c - 滁州</option>
+             <option value="chuxiongzhou">c - 楚雄州</option>
+             <option value="dazhou">d - 达州</option>
+             <option value="dalizhou">d - 大理州</option>
+             <option value="dalian">d - 大连</option>
+             <option value="daqing">d - 大庆</option>
+             <option value="datong">d - 大同</option>
+             <option value="daxinganlingdiqu">d - 大兴安岭地区</option>
+             <option value="dandong">d - 丹东</option>
+             <option value="dehongzhou">d - 德宏州</option>
+             <option value="deyang">d - 德阳</option>
+             <option value="dezhou">d - 德州</option>
+             <option value="diqingzhou">d - 迪庆州</option>
+             <option value="dingxi">d - 定西</option>
+             <option value="dongguan">d - 东莞</option>
+             <option value="dongying">d - 东营</option>
+             <option value="eerduosi">e - 鄂尔多斯</option>
+             <option value="ezhou">e - 鄂州</option>
+             <option value="enshizhou">e - 恩施州</option>
+             <option value="fangchenggang">f - 防城港</option>
+             <option value="foshan">f - 佛山</option>
+             <option value="fuzhou">f - 福州</option>
+             <option value="fushun">f - 抚顺</option>
+             <option value="fuzhoushi">f - 抚州</option>
+             <option value="fuxin">f - 阜新</option>
+             <option value="fuyang">f  - 阜阳</option>
+             <option value="fuyangshi">f  - 富阳</option>
+             <option value="gannanzhou">g - 甘南州</option>
+             <option value="ganzizhou">g - 甘孜州</option>
+             <option value="ganzhou">g - 赣州</option>
+             <option value="guyuan">g - 固原</option>
+             <option value="guangan">g - 广安</option>
+             <option value="guangyuan">g - 广元</option>
+             <option value="guangzhou">g - 广州</option>
+             <option value="guigang">g - 贵港</option>
+             <option value="guiyang">g - 贵阳</option>
+             <option value="guilin">g - 桂林</option>
+             <option value="guoluozhou">g - 果洛州</option>
+             <option value="haerbin">h - 哈尔滨</option>
+             <option value="hamidiqu">h - 哈密地区</option>
+             <option value="haibeizhou">h - 海北州</option>
+             <option value="haidongdiqu">h - 海东地区</option>
+             <option value="haikou">h - 海口</option>
+             <option value="haimen">h - 海门</option>
+             <option value="hainanzhou">h - 海南州</option>
+             <option value="haixizhou">h - 海西州</option>
+             <option value="handan">h - 邯郸</option>
+             <option value="hanzhong">h - 汉中</option>
+             <option value="hangzhou">h - 杭州</option>
+             <option value="hefei">h - 合肥</option>
+             <option value="hetiandiqu">h - 和田地区</option>
+             <option value="hechi">h - 河池</option>
+             <option value="heyuan">h - 河源</option>
+             <option value="heze">h - 菏泽</option>
+             <option value="hezhou">h - 贺州</option>
+             <option value="hebi">h - 鹤壁</option>
+             <option value="hegang">h - 鹤岗</option>
+             <option value="heihe">h - 黑河</option>
+             <option value="hengshui">h - 衡水</option>
+             <option value="hengyang">h - 衡阳</option>
+             <option value="honghezhou">h - 红河州</option>
+             <option value="huhehaote">h - 呼和浩特</option>
+             <option value="hulunbeier">h - 呼伦贝尔</option>
+             <option value="huludao">h - 葫芦岛</option>
+             <option value="huzhou">h - 湖州</option>
+             <option value="huaihua">h - 怀化</option>
+             <option value="huaian">h - 淮安</option>
+             <option value="huaibei">h - 淮北</option>
+             <option value="huainan">h - 淮南</option>
+             <option value="huanggang">h - 黄冈</option>
+             <option value="huangnanzhou">h - 黄南州</option>
+             <option value="huangshan">h - 黄山</option>
+             <option value="huangshi">h - 黄石</option>
+             <option value="huizhou">h - 惠州</option>
+             <option value="jixi">j - 鸡西</option>
+             <option value="jian">j - 吉安</option>
+             <option value="jilin">j - 吉林</option>
+             <option value="jimo">j - 即墨</option>
+             <option value="jinan">j - 济南</option>
+             <option value="jining">j - 济宁</option>
+             <option value="jiamusi">j - 佳木斯</option>
+             <option value="jiaxing">j - 嘉兴</option>
+             <option value="jiayuguan">j - 嘉峪关</option>
+             <option value="jiangmen">j - 江门</option>
+             <option value="jiangyin">j - 江阴</option>
+             <option value="jiaonan">j - 胶南</option>
+             <option value="jiaozhou">j - 胶州</option>
+             <option value="jiaozuo">j - 焦作</option>
+             <option value="jieyang">j - 揭阳</option>
+             <option value="jinchang">j - 金昌</option>
+             <option value="jinhua">j - 金华</option>
+             <option value="jintan">j - 金坛</option>
+             <option value="jinzhou">j - 锦州</option>
+             <option value="jincheng">j - 晋城</option>
+             <option value="jinzhong">j - 晋中</option>
+             <option value="jingmen">j - 荆门</option>
+             <option value="jingzhou">j - 荆州</option>
+             <option value="jingdezhen">j - 景德镇</option>
+             <option value="jiujiang">j - 九江</option>
+             <option value="jiuquan">j - 酒泉</option>
+             <option value="jurong">j - 句容</option>
+             <option value="kashidiqu">k - 喀什地区</option>
+             <option value="kaifeng">k - 开封</option>
+             <option value="kelamayi">k - 克拉玛依</option>
+             <option value="kezhou">k - 克州</option>
+             <option value="kuerle">k - 库尔勒</option>
+             <option value="kunming">k - 昆明</option>
+             <option value="kunshan">k - 昆山</option>
+             <option value="lasa">l - 拉萨</option>
+             <option value="laibin">l - 来宾</option>
+             <option value="laiwu">l - 莱芜</option>
+             <option value="laixi">l - 莱西</option>
+             <option value="laizhou">l - 莱州</option>
+             <option value="lanzhou">l - 兰州</option>
+             <option value="langfang">l - 廊坊</option>
+             <option value="leshan">l - 乐山</option>
+             <option value="lijiang">l - 丽江</option>
+             <option value="lishui">l - 丽水</option>
+             <option value="liyang">l - 溧阳</option>
+             <option value="lianyungang">l - 连云港</option>
+             <option value="liangshanzhou">l - 凉山州</option>
+             <option value="liaoyang">l - 辽阳</option>
+             <option value="liaoyuan">l - 辽源</option>
+             <option value="liaocheng">l - 聊城</option>
+             <option value="linzhidiqu">l - 林芝地区</option>
+             <option value="linan">l - 临安</option>
+             <option value="lincang">l - 临沧</option>
+             <option value="linfen">l - 临汾</option>
+             <option value="linxiazhou">l - 临夏州</option>
+             <option value="linyi">l - 临沂</option>
+             <option value="liuzhou">l - 柳州</option>
+             <option value="liuan">l - 六安</option>
+             <option value="liupanshui">l - 六盘水</option>
+             <option value="longyan">l - 龙岩</option>
+             <option value="longnan">l - 陇南</option>
+             <option value="loudi">l - 娄底</option>
+             <option value="luzhou">l - 泸州</option>
+             <option value="luoyang">l - 洛阳</option>
+             <option value="luohe">l - 漯河</option>
+             <option value="lvliang">l - 吕梁</option>
+             <option value="maanshan">m - 马鞍山</option>
+             <option value="maoming">m - 茂名</option>
+             <option value="meishan">m - 眉山</option>
+             <option value="meizhou">m - 梅州</option>
+             <option value="mianyang">m - 绵阳</option>
+             <option value="mudanjiang">m - 牡丹江</option>
+             <option value="naqudiqu">n - 那曲地区</option>
+             <option value="nanchang">n - 南昌</option>
+             <option value="nanchong">n - 南充</option>
+             <option value="nanjing">n - 南京</option>
+             <option value="nanning">n - 南宁</option>
+             <option value="nanping">n - 南平</option>
+             <option value="nantong">n - 南通</option>
+             <option value="nanyang">n - 南阳</option>
+             <option value="najiang">n - 内江</option>
+             <option value="ningbo">n - 宁波</option>
+             <option value="ningde">n - 宁德</option>
+             <option value="nujiangzhou">n - 怒江州</option>
+             <option value="panzhihua">p - 攀枝花</option>
+             <option value="panjin">p - 盘锦</option>
+             <option value="penglai">p - 蓬莱</option>
+             <option value="pingdingshan">p - 平顶山</option>
+             <option value="pingdu">p - 平度</option>
+             <option value="pingliang">p - 平凉</option>
+             <option value="pingxiang">p - 萍乡</option>
+             <option value="putian">p - 莆田</option>
+             <option value="puyang">p - 濮阳</option>
+             <option value="puer">p - 普洱</option>
+             <option value="qitaihe">q - 七台河</option>
+             <option value="qiqihaer">q - 齐齐哈尔</option>
+             <option value="qiandongnanzhou">q - 黔东南州</option>
+             <option value="qiannanzhou">q - 黔南州</option>
+             <option value="qianxinanzhou">q - 黔西南州</option>
+             <option value="qinzhou">q - 钦州</option>
+             <option value="qinhuangdao">q - 秦皇岛</option>
+             <option value="qingdao">q - 青岛</option>
+             <option value="qingyuan">q - 清远</option>
+             <option value="qingyang">q - 庆阳</option>
+             <option value="quzhou">q - 衢州</option>
+             <option value="qujing">q - 曲靖</option>
+             <option value="quanzhou">q - 泉州</option>
+             <option value="rikazediqu">r - 日喀则地区</option>
+             <option value="rizhao">r - 日照</option>
+             <option value="rongcheng">r - 荣成</option>
+             <option value="rushan">r - 乳山</option>
+             <option value="sanmenxia">s - 三门峡</option>
+             <option value="sanming">s - 三明</option>
+             <option value="sansha">s - 三沙</option>
+             <option value="sanya">s - 三亚</option>
+             <option value="xiamen">x - 厦门</option>
+             <option value="shannandiqu">s - 山南地区</option>
+             <option value="shantou">s - 汕头</option>
+             <option value="shanwei">s - 汕尾</option>
+             <option value="shangluo">s - 商洛</option>
+             <option value="shangqiu">s - 商丘</option>
+             <option value="shanghai">s - 上海</option>
+             <option value="shangrao">s - 上饶</option>
+             <option value="shaoguan">s - 韶关</option>
+             <option value="shaoyang">s - 邵阳</option>
+             <option value="shaoxing">s - 绍兴</option>
+             <option value="shenzhen">s - 深圳</option>
+             <option value="shenyang">s - 沈阳</option>
+             <option value="shiyan">s - 十堰</option>
+             <option value="shihezi">s - 石河子</option>
+             <option value="shijiazhuang">s - 石家庄</option>
+             <option value="shizuishan">s - 石嘴山</option>
+             <option value="shouguang">s - 寿光</option>
+             <option value="shuangyashan">s - 双鸭山</option>
+             <option value="shuozhou">s - 朔州</option>
+             <option value="siping">s - 四平</option>
+             <option value="songyuan">s - 松原</option>
+             <option value="suzhou">s - 苏州</option>
+             <option value="suihua">s - 绥化</option>
+             <option value="suizhou">s - 随州</option>
+             <option value="suining">s - 遂宁</option>
+             <option value="tachengdiqu">t - 塔城地区</option>
+             <option value="taizhou">t - 台州</option>
+             <option value="taicang">t - 太仓</option>
+             <option value="taiyuan">t - 太原</option>
+             <option value="taian">t - 泰安</option>
+             <option value="taizhoushi">t - 泰州</option>
+             <option value="tangshan">t - 唐山</option>
+             <option value="tianjin">t - 天津</option>
+             <option value="tianshui">t - 天水</option>
+             <option value="tieling">t - 铁岭</option>
+             <option value="tonghua">t - 通化</option>
+             <option value="tongliao">t - 通辽</option>
+             <option value="tongchuan">t - 铜川</option>
+             <option value="tongling">t - 铜陵</option>
+             <option value="tongrendiqu">t - 铜仁地区</option>
+             <option value="tulufandiqu">t - 吐鲁番地区</option>
+             <option value="wafangdian">w - 瓦房店</option>
+             <option value="weihai">w - 威海</option>
+             <option value="weifang">w - 潍坊</option>
+             <option value="weinan">w - 渭南</option>
+             <option value="wenzhou">w - 温州</option>
+             <option value="wendeng">w - 文登</option>
+             <option value="wenshanzhou">w - 文山州</option>
+             <option value="wuhai">w - 乌海</option>
+             <option value="wulanchabu">w - 乌兰察布</option>
+             <option value="wulumuqi">w - 乌鲁木齐</option>
+             <option value="wuxi">w - 无锡</option>
+             <option value="wuhu">w - 芜湖</option>
+             <option value="wujiang">w - 吴江</option>
+             <option value="wuzhong">w - 吴忠</option>
+             <option value="wuzhou">w - 梧州</option>
+             <option value="wujiaqu">w - 五家渠</option>
+             <option value="wuhan">w - 武汉</option>
+             <option value="wuwei">w - 武威</option>
+             <option value="xian">x - 西安</option>
+             <option value="xining">x - 西宁</option>
+             <option value="xishuangbannazhou">x - 西双版纳州</option>
+             <option value="xilinguolemeng">x - 锡林郭勒盟</option>
+             <option value="xianning">x - 咸宁</option>
+             <option value="xianyang">x - 咸阳</option>
+             <option value="xiangtan">x - 湘潭</option>
+             <option value="xiangxizhou">x - 湘西州</option>
+             <option value="xiangyang">x - 襄阳</option>
+             <option value="xiaogan">x - 孝感</option>
+             <option value="xinzhou">x - 忻州</option>
+             <option value="xinxiang">x - 新乡</option>
+             <option value="xinyu">x - 新余</option>
+             <option value="xinyang">x - 信阳</option>
+             <option value="xingtai">x - 邢台</option>
+             <option value="xinganmeng">x - 兴安盟</option>
+             <option value="suqian">s - 宿迁</option>
+             <option value="suzhoushi">s - 宿州</option>
+             <option value="xuzhou">x - 徐州</option>
+             <option value="xuchang">x - 许昌</option>
+             <option value="xuancheng">x - 宣城</option>
+             <option value="yaan">y - 雅安</option>
+             <option value="yantai">y - 烟台</option>
+             <option value="yanan">y - 延安</option>
+             <option value="yanbianzhou">y - 延边州</option>
+             <option value="yancheng">y - 盐城</option>
+             <option value="yangzhou">y - 扬州</option>
+             <option value="yangjiang">y - 阳江</option>
+             <option value="yangquan">y - 阳泉</option>
+             <option value="yichunshi">y - 伊春</option>
+             <option value="yilihasakezhou">y - 伊犁哈萨克州</option>
+             <option value="yibin">y - 宜宾</option>
+             <option value="yichang">y - 宜昌</option>
+             <option value="yichun">y - 宜春</option>
+             <option value="yixing">y - 宜兴</option>
+             <option value="yiwu">y - 义乌</option>
+             <option value="yiyang">y - 益阳</option>
+             <option value="yinchuan">y - 银川</option>
+             <option value="yingtan">y - 鹰潭</option>
+             <option value="yingkou">y - 营口</option>
+             <option value="yongzhou">y - 永州</option>
+             <option value="yulin">y - 榆林</option>
+             <option value="yulin">y - 玉林</option>
+             <option value="yushuzhou">y - 玉树州</option>
+             <option value="yuxi">y - 玉溪</option>
+             <option value="yueyang">y - 岳阳</option>
+             <option value="yunfu">y - 云浮</option>
+             <option value="yuncheng">y - 运城</option>
+             <option value="zaozhuang">z - 枣庄</option>
+             <option value="zhanjiang">z - 湛江</option>
+             <option value="zhangjiagang">z - 张家港</option>
+             <option value="zhangjiajie">z - 张家界</option>
+             <option value="zhangjiakou">z - 张家口</option>
+             <option value="zhangye">z - 张掖</option>
+             <option value="zhangqiu">z - 章丘</option>
+             <option value="zhangzhou">z - 漳州</option>
+             <option value="changchun">c - 长春</option>
+             <option value="changsha">c - 长沙</option>
+             <option value="changzhi">c - 长治</option>
+             <option value="zhaoyuan">z - 招远</option>
+             <option value="zhaotong">z - 昭通</option>
+             <option value="zhaoqing">z - 肇庆</option>
+             <option value="zhenjiang">z - 镇江</option>
+             <option value="zhengzhou">z - 郑州</option>
+             <option value="zhongshan">z - 中山</option>
+             <option value="zhongwei">z - 中卫</option>
+             <option value="zhongqing">z - 重庆</option>
+             <option value="zhoushan">z - 舟山</option>
+             <option value="zhoukou">z - 周口</option>
+             <option value="zhuhai">z - 珠海</option>
+             <option value="zhuzhou">z - 株洲</option>
+             <option value="zhuji">z - 诸暨</option>
+             <option value="zhumadian">z - 驻马店</option>
+             <option value="ziyang">z - 资阳</option>
+             <option value="zibo">z - 淄博</option>
+             <option value="zigong">z - 自贡</option>
+             <option value="zunyi">z - 遵义</option>
+    </select>
+    <div class="btn" id="save">保存</div>
+    <div class="btn" id="update">更新</div>
+    <div style="clear:both;padding-bottom:15px" ></div>
+    <div id="levelline">
+        <div class="line-l1 line"></div>
+        <div class="line-l2 line"></div>
+        <div class="line-l3 line"></div>
+        <div class="line-l4 line"></div>
+        <div class="line-l5 line"></div>
+        <div class="line-l6 line"></div>
+        <i id="indicator"></i>
+    </div>
+    <div class="levelnum">
+        <div class="levelint"><span style="float:left">0</span>50</div>
+        <div class="levelint">100</div>
+        <div class="levelint">150</div>
+        <div class="levelint">200</div>
+        <div class="levelint">300</div>
+        <div class="levelint">&gt;500</div>
+    </div>
+    <div class="levelnum tips">
+        <div class="levelint" title="健康影响：基本无空气污染。
+
+建议措施：各类人群可正常活动。">优</div>
+        <div class="levelint" title="健康影响：可能对极少数异常敏感人群健康有轻微影响。
+
+建议措施：极少数异常敏感人群应减少户外运动。">良</div>
+        <div class="levelint" title="健康影响：易感人群症状有轻微加剧，健康人群出现轻微症状。
+
+建议措施：儿童、老年人及心脏病、呼吸系统疾病患者应减少长时间、高强度户外运动。">轻度污染</div>
+        <div class="levelint" title="健康影响：进一步加剧易感人群症状，可能对健康人群心脏、呼吸系统有影响。
+
+建议措施：儿童、老年人及心脏病、呼吸系统疾病患者应避免长时间、高强度户外运动，一般人群应适量减少户外运动。">中度污染</div>
+        <div class="levelint" title="健康影响：心脏病和呼吸系统疾病患者症状显著加剧，运动耐受力降低，健康人群普遍出现症状。
+
+建议措施：儿童、老年人及心脏病、呼吸系统疾病患者应停留在室内，停止户外运动，一般人群应减少户外运动。">重度污染</div>
+        <div class="levelint" title="健康影响：健康人群运动耐受力降低，有明显强烈症状，提前出现某些疾病。
+
+建议措施：儿童、老年人及心脏病、呼吸系统疾病患者应停留在室内，避免体力消耗，一般人群应避免户外运动。">严重污染</div>
+    </div>
+</div>
+<table id="detail">
+    <tr id="tr1">
+        <td title="细颗粒物 1 小时">PM 2.5</td>
+        <td title="可吸入颗粒物 1 小时">PM 10</td>
+        <td title="二氧化硫 1 小时">SO<sub>2</sub></td>
+        <td title="二氧化氮 1 小时">NO<sub>2</sub></td>
+        <td title="一氧化碳 1 小时">CO</td>
+        <td title="臭氧 1 小时">O<sub>3</sub><br/><sub>1h</sub></td>
+        <td title="臭氧 8 小时">O<sub>3</sub><br/><sub>8h</sub></td>
+        <td title="AQI 美国标准 1 小时平均值" style="border-left:1px dashed #CCC">AQI<br/><sub>US</sub></td>
+        <td title="AQI 中国标准 24 小时平均值">AQI<br/><sub>24h</sub></td>
+    </tr>
+    <tr id="tr2">
+        <td title="1 小时平均值（μg/m³）" id="pm25">--</td>
+        <td title="1 小时平均值（μg/m³）" id="pm10">--</td>
+        <td title="1 小时平均值（μg/m³）" id="so2">--</td>
+        <td title="1 小时平均值（μg/m³）" id="no2">--</td>
+        <td title="1 小时平均值（mg/m³）" id="co">--</td>
+        <td title="1 小时平均值（μg/m³）" id="o3">--</td>
+        <td title="8 小时滑动平均值（μg/m³）" id="o38h">--</td>
+        <td style="border-left:1px dashed #CCC">/</td>
+        <td>/</td>
+    </tr>
+    <tr id="tr2">
+        <td title="单项 AQI" id="cn_aqi_pm25">--</td>
+        <td title="单项 AQI" id="cn_aqi_pm10">--</td>
+        <td title="单项 AQI" id="cn_aqi_so2">--</td>
+        <td title="单项 AQI" id="cn_aqi_no2">--</td>
+        <td title="单项 AQI" id="cn_aqi_co">--</td>
+        <td title="单项 AQI" id="cn_aqi_o3">--</td>
+        <td title="单项 AQI" id="cn_aqi_o38h">--</td>
+        <td title="AQI 美国标准 1 小时平均值" id="us_aqi" style="border-left:1px dashed #CCC">--</td>
+        <td title="AQI 中国标准 24 小时平均值" id="aqi">--</td>
+    </tr>
+</table>
+<div style="font-size:12px;text-align:center"><span id="time"></span>数据源与最新数据：<a id="site">pm25.in</a>。<a id="donate" style="color:grey">捐赠</a></div>
+</div>
+<script src="popup.js"></script>
+</body>
+</html>

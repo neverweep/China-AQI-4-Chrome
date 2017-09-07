@@ -1,0 +1,46 @@
+﻿body{color:#555;background-color:#FEFEFE;overflow-x:hidden;line-height:1.6;padding:0;margin:0;width:425px}
+select,body{font-size:13px;font-family:"Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei",SimSun,sans-serif;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:none;overflow:hidden}
+a{color:#2AD;text-decoration:underline}
+a:hover{cursor:pointer}
+sub{font-size:9px}
+select{padding:5px 10px;border:1px solid #CCC;border-radius:3px;background:#FFF;outline:none}
+div,span,table{cursor:default}
+
+#container{padding: 10px}
+
+/* AQI和评价 */
+#cn_aqi{font-size:48px;margin-left:5px;float:left;line-height:1;cursor:help}
+#quality {font-size:18px;margin-left:10px;line-height:48px;float:left}
+.num-l1 {color:#00E400}
+.num-l2 {color:#F6E90A}
+.num-l3 {color:#FF7E00}
+.num-l4 {color:#FF0000}
+.num-l5 {color:#99004C}
+.num-l6 {color:#7E0023}
+/* 城市 */
+#city{float:right;margin-top:8px;margin-right:10px}
+.btn{display:none;width:2em;height:18px;padding:5px 10px;float:right;margin-top:8px;border:1px solid #CCC;border-radius:3px;background:#FFF}
+.btn:hover{background:#2AD;border:1px solid #2AD;color:#FFF;cursor:pointer}
+#save, #update{margin-right:3px}
+/* 颜色指示条 */
+#levelline{position:relative}
+.line {width:65px;height:5px;border-left:1px solid #FFF;float:left;overflow:hidden}
+.line-l1 {background:#00E400}
+.line-l2 {background:#F6E90A}
+.line-l3 {background:#FF7E00}
+.line-l4 {background:#FF0000}
+.line-l5 {background:#99004C}
+.line-l6 {background:#7E0023}
+/* 指示文字 */
+.levelnum {clear:both;padding-top:2px}
+.levelint {float:left;width:66px;text-align:right}
+.tips .levelint{cursor:help}
+/* 指示器 */
+#indicator{width:10px;height:5px;border-width:5px;background:url('/res/indicator.png') no-repeat;position:absolute;top:-7px;z-index:1;display:none}
+/* 细节表格 */
+#detail{border-collapse:collapse;margin:40px auto 20px auto}
+#detail td{width:35px;padding:8px 10px;text-align:center;cursor:help}
+#detail #tr1{border-bottom:1px solid #ccc;border-top:1px solid #CCC}
+#detail #tr2{border-bottom:1px solid #ccc}
+/* 其它 */
+.pollutant{font-style:italic;font-weight:bold}
