@@ -187,7 +187,7 @@ function updateUI(){
         delete nodeTr3;
         bg.consoleLog('popup.js', '更新显示');
     }else{
-        bg.consoleLog('popup.js', '无数据，没有更新显示');
+        bg.consoleWarn('popup.js', '无数据，没有更新显示');
     }
 }
 //监听并处理返回数据
@@ -211,12 +211,12 @@ document.getElementById('save').onclick = function(){
     bg.forceUpdate();
     this.style.display='none';
     document.getElementById('update').style.display='block';
-    bg.consoleLog('popup.js', '保存城市数据');
+    bg.consoleInfo('popup.js', '保存城市数据');
 }
 document.getElementById('update').onclick = function(){
     bg.forceUpdate();
     this.style.display='none';
-    bg.consoleLog('popup.js', '强制更新数据');
+    bg.consoleInfo('popup.js', '强制更新数据');
 }
 document.getElementById('city').onchange = function(){
     document.getElementById('save').style.display = 'block';

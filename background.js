@@ -54,17 +54,19 @@ ajax.request = function(){
         },
         error: function(){
             clearTimeout(t);
-            updateIcon();
-            consoleLog('background.js', '请求错误');;
+            chrome.browserAction.setIcon({path: 'icons/err_19.png'});
+            chrome.browserAction.setBadgeText({text: ''});
+            consoleError('background.js', '请求错误');;
         },
         success: function(){
             clearTimeout(t);
             tmp = eval('(' + xhr.responseText + ')');
             if(typeof(tmp.error) != 'undefined'){
-                updateIcon();
-                consoleLog('background.js', '请求成功，返回错误');;
+                chrome.browserAction.setIcon({path: 'icons/err_19.png'});
+                chrome.browserAction.setBadgeText({text: ''});
+                consoleError('background.js', '请求成功，但是返回错误');;
             }else{
-                consoleLog('background.js', '请求成功，返回数据');;
+                consoleInfo('background.js', '请求成功，返回数据');;
                 parseAndSaveData(tmp);
             }
         },
@@ -72,8 +74,9 @@ ajax.request = function(){
             clearTimeout(t);
             clearInterval(interval);
             interval = setInterval('requestJSON()',900000);
-            updateIcon();
-            consoleLog('background.js', '请求超时');;
+            chrome.browserAction.setIcon({path: 'icons/err_19.png'});
+            chrome.browserAction.setBadgeText({text: ''});
+            consoleError('background.js', '请求超时');;
         },
     };
     var xhr = new XMLHttpRequest(),
@@ -217,7 +220,7 @@ function updateIcon(){
     }else{
         chrome.browserAction.setIcon({path: 'icons/err_19.png'});
         chrome.browserAction.setBadgeText({text: ''});
-        consoleLog('background.js', '无数据，更新为失败图标');;
+        consoleWarn('background.js', '无数据，更新为失败图标');;
     }
 }
 
@@ -238,7 +241,7 @@ function requestJSON(){
             chrome.browserAction.setIcon({path: 'icons/icon_19.png'});;
             chrome.browserAction.setBadgeText({text: ''});
             ajax.request();
-            consoleLog('background.js', '请求新数据（45分）');;
+            consoleLog('background.js', '请求新数据');;
         }else{
             updateIcon();
             clearInterval(interval);
@@ -249,11 +252,11 @@ function requestJSON(){
         chrome.browserAction.setIcon({path: 'icons/icon_19.png'});;
         chrome.browserAction.setBadgeText({text: ''});
         ajax.request();
-        consoleLog('background.js', '未找到数据，但有城市记录');;
+        consoleWarn('background.js', '未找到数据，但有城市记录');;
     }else{
         chrome.browserAction.setIcon({path: 'icons/icon_19.png'});;
         chrome.browserAction.setBadgeText({text: ''});
-        consoleLog('background.js', '未找到数据和城市记录');;
+        consoleWarn('background.js', '未找到数据和城市记录');;
     }
 }
 
@@ -275,7 +278,7 @@ function forceUpdate(){
     chrome.browserAction.setIcon({path: 'icons/icon_19.png'});
     chrome.browserAction.setBadgeText({text: ''});
     ajax.request();
-    consoleLog('background.js', '强制更新数据');;
+    consoleInfo('background.js', '强制更新数据');;
 }
 
 //线性化，计算 AQI 分值的程序
@@ -629,5 +632,14 @@ function AQIO38hr(Concentration, Concentration1hr, isCN){
 }
 
 function consoleLog(from, msg){
-    console.log(from + ": " + msg + " @ " + new Date().toLocaleTimeString());
+    console.debug(from + ": " + msg + " @ " + new Date().toLocaleTimeString());
+}
+function consoleInfo(from, msg){
+    console.info(from + ": " + msg + " @ " + new Date().toLocaleTimeString());
+}
+function consoleWarn(from, msg){
+    console.warn(from + ": " + msg + " @ " + new Date().toLocaleTimeString());
+}
+function consoleError(from, msg){
+    console.error(from + ": " + msg + " @ " + new Date().toLocaleTimeString());
 }

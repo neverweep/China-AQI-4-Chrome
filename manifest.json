@@ -18,7 +18,7 @@
     "default_popup": "popup.html"
   },
   "permissions":[
-    "webRequest", // web请求
+    "webRequest",
     "webRequestBlocking",
     "storage",
     "http://www.pm25.in/"
