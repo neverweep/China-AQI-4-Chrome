@@ -1,7 +1,7 @@
 ﻿{
   "manifest_version": 2,
   "name": "中国空气质量指数 - China AQI",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "方便您随时关注所在城市的空气质量",
   "minimum_chrome_version": "21",
   "icons": {
