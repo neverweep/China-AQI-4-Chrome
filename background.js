@@ -16,7 +16,7 @@ chrome.storage.local.get({
     function(items) {
         settings = items;
         if(settings.data){
-            settings.data = eval('(' + settings.data + ')');
+            settings.data = JSON.parse(settings.data);
             rData = settings.data;
         }
         requestJSON();
@@ -60,7 +60,7 @@ ajax.request = function(){
         },
         success: function(){
             clearTimeout(t);
-            tmp = eval('(' + xhr.responseText + ')');
+            tmp = JSON.parse(xhr.responseText);
             if(typeof(tmp.error) != 'undefined'){
                 chrome.browserAction.setIcon({path: 'icons/err_19.png'});
                 chrome.browserAction.setBadgeText({text: ''});
